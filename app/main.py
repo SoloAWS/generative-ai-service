@@ -10,9 +10,9 @@ app = FastAPI()
 version = "1.0"
 
 
-@app.get("/microservice/health")
+@app.get("/generative-ai/health")
 async def health():
-    return {"status": "OK Python"}
+    return {"status": "OK Generative AI"}
 
 @app.exception_handler(ApiError)
 async def api_error_exception_handler(request: Request, exc: ApiError):
