@@ -2,12 +2,15 @@ import os
 from fastapi import FastAPI, Request, APIRouter
 from fastapi.responses import JSONResponse
 from fastapi.exceptions import RequestValidationError
+from .routers import generative_ai
 
 from .errors.errors import ApiError
 
 app = FastAPI()
 
 version = "1.0"
+
+app.include_router(generative_ai.router)
 
 
 @app.get("/generative-ai/health")
